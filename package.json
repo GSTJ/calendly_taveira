@@ -1,0 +1,21 @@
+{
+  "name": "calendly_taveira",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=kapp* node .",
+    "start:local": "NODE_ENV=local DEBUG=kapp* node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@kustomer/apps-server-sdk": "^0.0.52",
+    "dotenv": "^16.0.1",
+    "sinon": "^14.0.1"
+  }
+}
