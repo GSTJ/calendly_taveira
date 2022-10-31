@@ -1,4 +1,3 @@
-import { KObject } from '@kustomer/apps-server-sdk';
 import { Customers } from '@kustomer/apps-server-sdk/lib/api/customer';
 
 import { Klasses } from '../../klasses';
@@ -10,7 +9,7 @@ export async function createEventKobject(Customers: Customers, event: any) {
 
   let customer = await Customers.getByEmail(event.calendly.email);
 
-  const kobject: KObject = mapCalendlyEvent(event.calendly);
+  const kobject = mapCalendlyEvent(event.calendly);
 
   if (customer) {
     await Customers.createKObject(customer.id, Klasses.Event, kobject);

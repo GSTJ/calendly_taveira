@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "DEBUG=kapp* ts-node .",
-    "start:local": "NODE_ENV=local DEBUG=kapp* node .",
+    "start:local": "NODE_ENV=local DEBUG=kapp* ts-node .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "author": "",

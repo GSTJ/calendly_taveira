@@ -1,4 +1,3 @@
-import { KObject } from '@kustomer/apps-server-sdk';
 import { KObjects } from '@kustomer/apps-server-sdk/lib/api/kobject';
 
 import { Klasses } from '../../klasses';
@@ -6,7 +5,7 @@ import kapp from '../../server/kapp';
 import mapCalendlyEvent from './mapCalendlyEvent';
 
 export async function updateEventKobject(Kobjects: KObjects, event: any) {
-  const kobject: KObject = mapCalendlyEvent(event);
+  const kobject = mapCalendlyEvent(event);
 
   kapp.log.info('Updating kobject', kobject);
 
