@@ -14,9 +14,9 @@ if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET) {
 export default new KApp({
   app: appName,
   version: appVersion,
-  title: 'calendly_taveira',
+  title: 'Calendly Gabriel Taveira',
   visibility: 'private',
-  description: '',
+  description: 'Done using the new Apps SDK',
   dependencies: [],
   default: false,
   system: false,
@@ -37,13 +37,13 @@ export default new KApp({
   ],
   appDetails: {
     appDeveloper: {
-      name: 'Kustomer',
+      name: 'Gabriel Taveira',
       website: 'https://kustomer.com',
       supportEmail: 'support@kustomer.com',
     },
     externalPlatform: {
-      name: 'calendly_taveira',
-      website: 'https://calendly_taveira.com',
+      name: 'Calendly',
+      website: 'https://calendly.com/',
     },
   },
   screenshots: [],
