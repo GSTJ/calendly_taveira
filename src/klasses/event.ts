@@ -1,4 +1,4 @@
-export const scheme = {
+export const event = {
   icon: 'calendar',
   color: '#3e9cf0',
   metadata: {

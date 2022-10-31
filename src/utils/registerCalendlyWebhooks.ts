@@ -12,7 +12,7 @@ const calendlyEvents = [
   CalendlyHooks.InviteeCreated,
 ];
 
-export const registerWebhooks = async (orgId: string) => {
+export const registerCalendlyWebhooks = async (orgId: string) => {
   const calendlyInstance = await getAuthorizedCalendlyInstance(orgId);
 
   const webhookUrl = `${kapp.manifest.url}/orgs/${orgId}/hooks/${CalendlyHooks.CalendlyEvent}`;
