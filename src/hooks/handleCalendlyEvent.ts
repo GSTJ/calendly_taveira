@@ -1,6 +1,6 @@
 import { Klasses } from '../klasses';
 import kapp from '../server/kapp';
-import { getEventResource } from '../utils/calendly';
+import { getAuthorizedCalendlyInstance } from '../utils/calendly';
 import { createEventKobject, updateEventKobject } from './helpers';
 
 export const handleCalendlyEvent: Parameters<typeof kapp.onHook>[1] = async (
@@ -10,15 +10,21 @@ export const handleCalendlyEvent: Parameters<typeof kapp.onHook>[1] = async (
   body: any,
 ) => {
   try {
-    const { event_type, name, start_time, end_time } = await getEventResource(
+    const calendlyInstance = await getAuthorizedCalendlyInstance(org);
+
+    const inviteResponse = await calendlyInstance.get(
       body.payload.uri.match(/.+?(?=\/invitee)/)[0],
     );
 
-    const { type, description_plain, duration } = await getEventResource(
-      event_type,
-    );
+    const { event_type, name, start_time, end_time } =
+      inviteResponse?.data?.resource || {};
 
-    const internalOrg = (kapp as any).in(org);
+    const eventResponse = await calendlyInstance.get(event_type);
+
+    const { type, description_plain, duration } =
+      eventResponse?.data?.resource || {};
+
+    const internalOrg = kapp.org(org);
 
     const kobject = await internalOrg.kobjects.getByExternalId(
       body.payload.uri,
