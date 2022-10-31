@@ -1,7 +1,7 @@
 import { Customers } from '@kustomer/apps-server-sdk/lib/api/customer';
 
-import { Klasses } from '../../klasses';
-import kapp from '../../server/kapp';
+import { Klasses } from '../../../klasses';
+import kapp from '../../../server/kapp';
 import mapCalendlyEvent from './mapCalendlyEvent';
 
 export async function createEventKobject(Customers: Customers, event: any) {

@@ -1,6 +1,6 @@
-import { Klasses } from '../klasses';
-import kapp from '../server/kapp';
-import { getAuthorizedCalendlyInstance } from '../utils/getAuthorizedCalendlyInstance';
+import { Klasses } from '../../klasses';
+import kapp from '../../server/kapp';
+import { getAuthorizedCalendlyInstance } from '../../utils/getAuthorizedCalendlyInstance';
 import { createEventKobject, updateEventKobject } from './helpers';
 
 export const handleCalendlyEvent: Parameters<typeof kapp.onHook>[1] = async (
