@@ -4,7 +4,7 @@ import './views';
 import './hooks';
 
 import kapp from './server/kapp';
-import { registerWebhooks as registerCalendlyWebhooks } from './utils/calendly';
+import { registerWebhooks as registerCalendlyWebhooks } from './utils/registerWebhooks';
 
 kapp.onInstall = async (_user, org) => {
   try {

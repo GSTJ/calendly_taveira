@@ -1,6 +1,5 @@
-import axios from 'axios';
-
 import kapp from '../server/kapp';
+import { getAuthorizedCalendlyInstance } from './getAuthorizedCalendlyInstance';
 
 export enum CalendlyHooks {
   CalendlyEvent = 'calendly.event',
@@ -12,16 +11,6 @@ const calendlyEvents = [
   CalendlyHooks.InviteeCancelled,
   CalendlyHooks.InviteeCreated,
 ];
-
-export async function getAuthorizedCalendlyInstance(org: string) {
-  const authTokenSetting = await kapp.org(org).settings.get();
-  return axios.create({
-    baseURL: 'https://api.calendly.com',
-    headers: {
-      Authorization: `Bearer ${authTokenSetting?.default.authToken as string}`,
-    },
-  });
-}
 
 export const registerWebhooks = async (orgId: string) => {
   const calendlyInstance = await getAuthorizedCalendlyInstance(orgId);
