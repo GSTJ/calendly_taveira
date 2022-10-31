@@ -1,6 +1,6 @@
 {
   "name": "calendly_taveira",
-  "version": "0.0.0",
+  "version": "0.9.21",
   "main": "src/index.ts",
   "type": "commonjs",
   "scripts": {
