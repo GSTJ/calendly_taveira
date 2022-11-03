@@ -4,11 +4,11 @@ import { getAuthorizedCalendlyInstance } from './getAuthorizedCalendlyInstance';
 export enum CalendlyHooks {
   CalendlyEvent = 'calendly.event',
   InviteeCreated = 'invitee.created',
-  InviteeCancelled = 'invitee.cancelled',
+  InviteeCanceled = 'invitee.canceled',
 }
 
 const calendlyEvents = [
-  CalendlyHooks.InviteeCancelled,
+  CalendlyHooks.InviteeCanceled,
   CalendlyHooks.InviteeCreated,
 ];
 
