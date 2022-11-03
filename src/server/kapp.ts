@@ -1,4 +1,4 @@
-import { KApp } from '@kustomer/apps-server-sdk';
+import { KApp, ROLES } from '@kustomer/apps-server-sdk';
 
 import changelog from '../../changelog.json';
 import { appName, appVersion } from '../constants';
@@ -14,7 +14,7 @@ if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET) {
 export default new KApp({
   app: appName,
   version: appVersion,
-  title: 'Calendly Gabriel Taveira',
+  title: 'Calendly Gabriel Taveira 2',
   visibility: 'private',
   description: 'Done using the new Apps SDK',
   dependencies: [],
@@ -26,15 +26,7 @@ export default new KApp({
   iconUrl: `${process.env.BASE_URL}/assets/icon.png`,
   env: 'prod',
   changelog,
-  roles: [
-    'org.user.customer.read',
-    'org.user.customer.write',
-    'org.user.message.read',
-    'org.permission.customer.read',
-    'org.permission.customer.create',
-    'org.permission.customer.update',
-    'org.permission.message.read',
-  ],
+  roles: ROLES.common,
   appDetails: {
     appDeveloper: {
       name: 'Gabriel Taveira',
