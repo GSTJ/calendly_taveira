@@ -5,7 +5,7 @@ import kapp from '../../../server/kapp';
 import mapCalendlyEvent from './mapCalendlyEvent';
 
 export async function updateEventKobject(Kobjects: KObjects, event: any) {
-  const kobject = mapCalendlyEvent(event);
+  const kobject = mapCalendlyEvent(event.calendly);
 
   kapp.log.info('Updating kobject', kobject);
 

@@ -2,6 +2,7 @@ import { Klasses } from '../../klasses';
 import kapp from '../../server/kapp';
 import { getAuthorizedCalendlyInstance } from '../../utils/getAuthorizedCalendlyInstance';
 import { createEventKobject, updateEventKobject } from './helpers';
+import getInviteId from './helpers/getInviteId';
 
 export const handleCalendlyEvent: Parameters<typeof kapp.onHook>[1] = async (
   org,
@@ -27,7 +28,7 @@ export const handleCalendlyEvent: Parameters<typeof kapp.onHook>[1] = async (
     const internalOrg = kapp.org(org);
 
     const kobject = await internalOrg.kobjects.getByExternalId(
-      body.payload.uri,
+      getInviteId(body.payload.uri),
       Klasses.Event,
     );
 
