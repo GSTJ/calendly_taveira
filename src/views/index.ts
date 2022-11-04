@@ -5,7 +5,7 @@ import { Klasses } from '../klasses';
 import kapp from '../server/kapp';
 
 enum KViews {
-  EventKView = 'Event-KView',
+  EventKView = 'event_view',
 }
 
 kapp.useView(

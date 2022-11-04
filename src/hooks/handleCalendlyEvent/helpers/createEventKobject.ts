@@ -2,6 +2,7 @@ import { Customers } from '@kustomer/apps-server-sdk/lib/api/customer';
 
 import { Klasses } from '../../../klasses';
 import kapp from '../../../server/kapp';
+import getInviteId from './getInviteId';
 import mapCalendlyEvent from './mapCalendlyEvent';
 
 export async function createEventKobject(Customers: Customers, event: any) {
@@ -13,9 +14,7 @@ export async function createEventKobject(Customers: Customers, event: any) {
 
   if (customer) {
     await Customers.createKObject(customer.id, Klasses.Event, kobject);
-
     kapp.log.info('Created kobject');
-
     return;
   }
 
@@ -24,6 +23,7 @@ export async function createEventKobject(Customers: Customers, event: any) {
   const newCustomer = await Customers.create({
     name: event.calendly.name,
     emails: [{ email: event.calendly.email }],
+    externalId: getInviteId(event.calendly.uri),
   });
 
   kapp.log.info('Created customer');
