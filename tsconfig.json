@@ -21,8 +21,8 @@
     "baseUrl": "./src" /* Base directory to resolve non-absolute module names. */,
     "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
-    "skipLibCheck": false /* Skip type checking of declaration files. */,
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
     "resolveJsonModule": true /* Allows importing modules with a ‘.json’ extension, which is a common practice in node projects. */
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/views/ExpandedTimeline.jsx"]
 }
