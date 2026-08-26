@@ -1,4 +1,5 @@
 {
+  "0.11.1": "Refresh the development dependency lockfile to patched versions.",
   "0.11.0": "Security: Authenticate Calendly webhooks and restrict API requests to Calendly-owned resource paths. Breaking: Node.js 22.12 or newer is now required.",
   "0.0.0": "init"
 }
