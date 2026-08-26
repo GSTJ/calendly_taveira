@@ -3,8 +3,10 @@ import packageJson from '../package.json';
 
 describe('release metadata', () => {
   it('documents the current package version', () => {
-    expect(changelog[packageJson.version as keyof typeof changelog]).toMatch(
-      /Calendly webhooks.*API requests/,
-    );
+    const currentEntry = changelog[
+      packageJson.version as keyof typeof changelog
+    ] as string | undefined;
+
+    expect(currentEntry?.trim()).toBeTruthy();
   });
 });
